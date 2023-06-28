@@ -20,7 +20,7 @@
             </el-submenu>
             <el-menu-item index="/Write">写博客</el-menu-item>
             <el-menu-item index="/About">关于我</el-menu-item>
-            <el-menu-item index="/Person">个人中心</el-menu-item>
+            <el-menu-item index="/index">个人中心</el-menu-item>
             <div class="block">
                 <!-- <div class="box1">
                     <img :src="circleUrl" alt="" class="userMessage" @mouseover="showInfo" @mouseleave="hideInfo">

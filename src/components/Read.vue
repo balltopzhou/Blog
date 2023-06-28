@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header></Header>
+        <Header style="margin: 0;"></Header>
         <div class="wrap_w">
             <div class="content read">
                 <div class="tit">初步认识Vue</div>

@@ -6,9 +6,10 @@ import Login from "../components/Login" //登陆
 import Register from "../components/Register"; //注册
 import About from '../components/About'//关于我
 import Write from '../components/Write'//写博客
-import All from '../components/All'
-import Read from '../components/Read'
-import Person from '../components/personcenter/Person'
+import All from '../components/All'//所有笔记
+import Read from '../components/Read'//笔记详情页
+import Index from '../components/personcenter/index'
+
 
 Vue.use(VueRouter)
 
@@ -42,10 +43,17 @@ const routes = [
   component: Write
 },
 {
-  name: 'Person',
-  path: '/Person',
-  component: Person
+  path: '/index',
+  name: 'index',
+  component: Index,
+  //路由嵌套
+  children:[
+      {path: '/index/menu1',component: () => import('../components/personcenter/Main1')},
+      {path: '/index/menu2',component: () => import('../components/personcenter/Main2.vue')},
+      {path: '/index/menu3',component: () => import('../components/personcenter/Main3.vue')}
+  ]
 },
+
 {
   name: 'About',
   path: '/About',
