@@ -63,13 +63,15 @@ export default {
         categories: [],
         author: "",
         preview: "",
-        time: ""
+        time: "",
+        isCollapse: true
       },
       submited: false,
 
     }
   },
   methods: {
+
     post() {
       this.blog.time = this.getNowFormatDate()
       this.$axios.post("https://myblog-9d6a6-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json",
@@ -97,6 +99,11 @@ export default {
 </script>
 
 <style scoped>
+
+/* .add-blog{
+  display: flex;
+  float: left;
+} */
 .top {
   background: url("../assets/All-block.png");
 }

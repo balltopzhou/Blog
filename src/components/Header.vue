@@ -1,6 +1,7 @@
 <template>
     <div class="title">
-        <el-menu router :default-active="this.$route.path" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+        <el-menu router :default-active="this.$route.path" class="el-menu-demo" mode="horizontal" @select="handleSelect"
+            background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
             <el-avatar :size="50" :src="BlogUrl" style="margin-top: 5px;margin-left: 10px; margin-right: 20px;
     display: flex;
     float: left;"></el-avatar>
@@ -19,7 +20,16 @@
             </el-submenu>
             <el-menu-item index="/Write">写博客</el-menu-item>
             <el-menu-item index="/About">关于我</el-menu-item>
+            <el-menu-item index="/Person">个人中心</el-menu-item>
             <div class="block">
+                <!-- <div class="box1">
+                    <img :src="circleUrl" alt="" class="userMessage" @mouseover="showInfo" @mouseleave="hideInfo">
+                    <div v-show="userInfo" class="box2">
+                        <p @click="personMessage">个人信息</p>
+                        <p @click="quit">退出</p>
+                    </div>
+                </div> -->
+
                 <el-avatar :size="50" :src="circleUrl"></el-avatar>
             </div>
             <el-button type="danger" @click.prevent="logout">退出</el-button>
@@ -38,8 +48,9 @@ export default {
             stel: localStorage.getItem('tel'),
             isAuth: "",//是否保持登录状态
             activeIndex: '1',
-            BlogUrl:require("../assets/blog.png"),
+            BlogUrl: require("../assets/blog.png"),
             circleUrl: require("../assets/block.png"),//头像图片
+            userInfo: false
         }
     },
     methods: {
@@ -51,7 +62,8 @@ export default {
         },
         handleSelect(key, keyPath) {
             console.log(key, keyPath);
-        }
+        },
+
     },
 }
 </script>
@@ -65,26 +77,10 @@ export default {
 .el-menu-demo el-menu-item {
     font-size: 2em;
 }
-
-.el-carousel__item h3 {
-    color: #050505;
-    font-size: 14px;
-    opacity: 0.75;
-    line-height: 280px;
-    margin: 0;
-}
-
-.el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
-}
-
-.el-carousel__item:nth-child(2n+1) {
-    background-color: #d3dce6;
-}
-
 .block {
-    margin-top: 13px;
-    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-flex;
     float: right;
 }
 
@@ -95,19 +91,10 @@ button {
     margin-top: 20px;
 }
 
-.section {
-    box-align: center;
-    padding-top: 0;
-    padding-bottom: 0;
-    min-height: 37.5rem;
-    height: 80vh;
-}
-
 header {
     position: absolute;
     margin-top: 200px;
     margin-left: 80px;
     width: 400px;
     color: white;
-}
-</style>
+}</style>

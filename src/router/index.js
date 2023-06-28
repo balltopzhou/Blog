@@ -8,6 +8,7 @@ import About from '../components/About'//关于我
 import Write from '../components/Write'//写博客
 import All from '../components/All'
 import Read from '../components/Read'
+import Person from '../components/personcenter/Person'
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,11 @@ const routes = [
   name: 'Write',
   path: '/Write',
   component: Write
+},
+{
+  name: 'Person',
+  path: '/Person',
+  component: Person
 },
 {
   name: 'About',
