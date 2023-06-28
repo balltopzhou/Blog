@@ -5,6 +5,8 @@ import App from './App'
 import router from './router'
 import VueParticles from 'vue-particles' 
 
+import jquery from "jquery";
+Vue.prototype.$ = jquery;
 Vue.use(VueParticles)  //粒子特效
 Vue.use(ElementUI)   
 

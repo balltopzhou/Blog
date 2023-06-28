@@ -67,6 +67,9 @@
           <div class="top-text">
             <h1>选择完美设计</h1>
             <p>创建符合个人风格的精美博客。我们精选了一些简单好用的模板，它们布局灵活并有数百种背景图片。您可以从中选择，也可以自己动手设计。</p>
+            <div :class="istrue1?'designactive':'design'" >
+               <img src="../assets/ps/pen.png" alt="">
+            </div>
           </div>
         </header>
       </section>
@@ -76,6 +79,9 @@
           <div class="top-text" >
             <h1>赚取收益</h1>
             <p>化创意为财富。Google AdSense 会自动在您的博客上显示相关的定位广告，您只需发布自己感兴趣的内容，即可赚取收益。</p>
+            <div :class="istrue2?'domainactive':'domain'" >
+               <img src="../assets/ps/ppp.png" alt="">
+            </div>
           </div>
         </header>
       </section>
@@ -86,6 +92,10 @@
           <div class="top-text">
             <h1>了解受众群体</h1>
             <p>利用 Blogger 内置的分析功能，了解哪些博客比较受欢迎。您可以了解受众群体来自哪里，以及他们对哪些内容感兴趣。此外，您还可以将博客直接关联到 Google Analytics（分析），进一步查看详细信息。</p>
+            <div :class="istrue3?'audienceactive':'audience'" >
+               <img src="../assets/ps/wave.png" alt="">
+            </div>
+           
           </div>
         </header>
       </section>
@@ -95,6 +105,10 @@
           <div class="top-text">
             <h1>留住美好记忆</h1>
             <p>保存重要时刻。利用 Blogger，您可以将成千上万的博文、照片以及更多内容妥善地存储在 Google 中。</p>
+            <div :class="istrue4?'jumpactive':'jump'" >
+               <img src="../assets/ps/picture.png" alt="">
+            </div>
+           
           </div>
         </header>
       </section>
@@ -103,6 +117,8 @@
     <router-view></router-view>
   </div>
 </template>
+
+
 
 <script>
 import Footer from '../components/Footer.vue'
@@ -124,17 +140,10 @@ export default {
       value1: 456,
       value2: 232,
       title: '用户数',
-      xPos: 300,
-      yPos: 200,
-      step: 1,
-      delay: 8,
-      height: 0,
-      Hoffset: 0,
-      Woffset: 0,
-      yon: 0,
-      xon: 0,
-      pause: true
-
+      istrue1:false,
+      istrue2:false,
+      istrue3:false,
+      istrue4:false
 
     };
   },
@@ -146,47 +155,30 @@ export default {
     interval = setInterval(this.changePos, 10)
   },
   methods: {
-    changePos () {
-      let width = document.documentElement.clientWidth
-      let height = document.documentElement.clientHeight
-      this.Hoffset = this.$refs.thediv.offsetHeight
-      this.Woffset = this.$refs.thediv.offsetWidth
-      this.$refs.thediv.style.left =
-        this.xPos +
-        document.body.scrollLeft +
-        document.documentElement.scrollLeft +
-        'px'
-      this.$refs.thediv.style.top =
-        this.yPos +
-        document.body.scrollTop +
-        document.documentElement.scrollTop +
-        'px'
-      if (this.yon) {
-        this.yPos = this.yPos + this.step
-      } else {
-        this.yPos = this.yPos - this.step
-      }
-      if (this.yPos < 0) {
-        this.yon = 1
-        this.yPos = 0
-      }
-      if (this.yPos >= height - this.Hoffset) {
-        this.yon = 0
-        this.yPos = height - this.Hoffset
-      }
-      if (this.xon) {
-        this.xPos = this.xPos + this.step
-      } else {
-        this.xPos = this.xPos - this.step
-      }
-      if (this.xPos < 0) {
-        this.xon = 1
-        this.xPos = 0
-      }
-      if (this.xPos >= width - this.Woffset) {
-        this.xon = 0
-        this.xPos = width - this.Woffset
-      }
+    getTop(){
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+        console.log(scrollTop)
+        if(scrollTop >  0){undefined
+            this.istrue1=true
+        }else{undefined
+            this.istrue1=false
+        }
+        if(scrollTop >  1000){undefined
+            this.istrue2=true
+        }else{undefined
+            this.istrue2=false
+        }
+        if(scrollTop >  1600){undefined
+            this.istrue3=true
+        }else{undefined
+            this.istrue3=false
+        }
+        if(scrollTop > 2200){undefined
+            this.istrue4=true
+        }else{undefined
+            this.istrue4=false
+        }
+       
     },
     clearFdAd () {
       clearInterval(interval)
@@ -197,7 +189,10 @@ export default {
     close(){
       this.$refs.thediv.style.display='none'
     }
-  }
+  },
+  mounted() {
+      window.addEventListener("scroll",this.getTop); 
+  },
 }
 </script>
 
@@ -236,12 +231,33 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.design img{
+  width: 500px;
+  transition: .6s ease-in-out;
+}
+.designactive img{
+  width: 500px;
+  padding-left: 540px;
+  margin-top: -200px;
+  transition: .6s ease-in-out;
+}
+
 .free-domain{
   width: 100%;
   height: 80vh;
   background: url("../assets/block-2.png");
   background-repeat: no-repeat;
   background-size: cover;
+}
+.domain img{
+  width: 350px;
+  transition: .6s ease-in-out;
+}
+.domainactive img{
+  width: 350px;
+  padding-left: 300px;
+  padding-top: 10px;
+  transition: .6s ease-in-out;
 }
 .know-your-audience{
   width: 100%;
@@ -250,12 +266,31 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.audience img{
+  width: 600px;
+  transition: .6s ease-in-out;
+}
+.audienceactive img{
+  width: 600px;
+  padding-left: 550px;
+  padding-top: 110px;
+  transition: .6s ease-in-out;
+}
 .enjoy-yourselves{
   width: 100%;
   height: 80vh;
-  background: url("../assets/block-4.png");
+  background: url("../assets/block-5.png");
   background-repeat: no-repeat;
   background-size: cover;
+}
+.jump img{
+  width: 400px;
+  transition: .6s ease-in-out;
+}
+.jumpactive img{
+  width: 400px;
+  padding-left: 500px;
+  transition: .6s ease-in-out;
 }
 .like {
   cursor: pointer;
