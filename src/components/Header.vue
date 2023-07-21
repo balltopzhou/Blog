@@ -22,13 +22,6 @@
             <el-menu-item index="/About">关于我</el-menu-item>
             <el-menu-item index="/index">个人中心</el-menu-item>
             <div class="block">
-                <!-- <div class="box1">
-                    <img :src="circleUrl" alt="" class="userMessage" @mouseover="showInfo" @mouseleave="hideInfo">
-                    <div v-show="userInfo" class="box2">
-                        <p @click="personMessage">个人信息</p>
-                        <p @click="quit">退出</p>
-                    </div>
-                </div> -->
 
                 <el-avatar :size="50" :src="circleUrl"></el-avatar>
             </div>

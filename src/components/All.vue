@@ -72,7 +72,6 @@ export default {
 <style scoped>
 .cationar{
     background: url("../assets/All-block.png");
-    margin-top: 10px;
 }
 .cationar h1{
     padding-top: 20px;

@@ -21,48 +21,48 @@ export default {
     data() {
         return {
             tableData: [{
-                date: '2016-05-02',
-                name: '王小虎',
+                date: '2023-05-02',
+                name: 'VUE',
                 title: '上海市普陀区金沙江路 1518 弄'
             }, {
-                date: '2016-05-04',
-                name: '王小虎',
+                date: '2023-05-04',
+                name: 'REACT',
                 title: '上海市普陀区金沙江路 1517 弄'
             }, {
-                date: '2016-05-01',
-                name: '王小虎',
+                date: '2023-05-01',
+                name: 'VUE',
                 title: '上海市普陀区金沙江路 1519 弄'
             }, {
-                date: '2016-05-03',
-                name: '王小虎',
+                date: '2023-05-03',
+                name: 'NODE',
+                title: '上海市普陀区金沙江路 1516 弄'
+            },{
+                date: '2023-05-03',
+                name: 'ANGULAR4',
+                title: '上海市普陀区金沙江路 1516 弄'
+            },{
+                date: '2023-05-03',
+                name: 'NODE',
+                title: '上海市普陀区金沙江路 1516 弄'
+            },{
+                date: '2023-05-03',
+                name: 'VUE',
                 title: '上海市普陀区金沙江路 1516 弄'
             },{
                 date: '2016-05-03',
-                name: '王小虎',
+                name: 'REACT',
                 title: '上海市普陀区金沙江路 1516 弄'
             },{
                 date: '2016-05-03',
-                name: '王小虎',
+                name: 'REACT',
                 title: '上海市普陀区金沙江路 1516 弄'
             },{
                 date: '2016-05-03',
-                name: '王小虎',
+                name: 'NODE',
                 title: '上海市普陀区金沙江路 1516 弄'
             },{
-                date: '2016-05-03',
-                name: '王小虎',
-                title: '上海市普陀区金沙江路 1516 弄'
-            },{
-                date: '2016-05-03',
-                name: '王小虎',
-                title: '上海市普陀区金沙江路 1516 弄'
-            },{
-                date: '2016-05-03',
-                name: '王小虎',
-                title: '上海市普陀区金沙江路 1516 弄'
-            },{
-                date: '2016-05-03',
-                name: '王小虎',
+                date: '2023-05-03',
+                name: 'VUE',
                 title: '上海市普陀区金沙江路 1516 弄'
             },
         ]
@@ -73,7 +73,7 @@ export default {
 
 <style scoped>
 .main2 {
-    margin-left: 400px;
+    margin-left: 480px;
     width: 100%;
     height: 800px;
 

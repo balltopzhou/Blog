@@ -1,82 +1,44 @@
 <template>
-    <div class="main1">
-        <el-card class="box-card">
-            <img src="../../assets/block.png" alt="">
-            <el-descriptions class="margin-top"  :column="3" :size="size" border>
-    <template slot="extra">
-      <el-button type="primary" size="small">操作</el-button>
-    </template>
-    <el-descriptions-item>
-      <template slot="label">
-        <i class="el-icon-user"></i>
-        用户名
-      </template>
-      kooriookami
-    </el-descriptions-item>
-    <el-descriptions-item>
-      <template slot="label">
-        <i class="el-icon-mobile-phone"></i>
-        手机号
-      </template>
-      18100000000
-    </el-descriptions-item>
-    <el-descriptions-item>
-      <template slot="label">
-        <i class="el-icon-location-outline"></i>
-        居住地
-      </template>
-      苏州市
-    </el-descriptions-item>
-    <el-descriptions-item>
-      <template slot="label">
-        <i class="el-icon-tickets"></i>
-        备注
-      </template>
-      <el-tag size="small">学校</el-tag>
-    </el-descriptions-item>
-    <el-descriptions-item>
-      <template slot="label">
-        <i class="el-icon-office-building"></i>
-        联系地址
-      </template>
-      江苏省苏州市吴中区吴中大道 1188 号
-    </el-descriptions-item>
-  </el-descriptions>
+  <div class="main1">
 
-        </el-card>
-    </div>
+      <div class="bg">
+                <el-button class="button" circle><el-avatar :size="100" :src="circleUrl"></el-avatar></el-button>
+                <h1 style="margin-right: 150px; color: black;">小熊软糖杀手</h1>        
+            </div>
+            
+     
+  </div>
 </template>
 
 <script>
 export default {
-    name: "Main1"
+  name: "Main1",
+  data() {
+        return {
+            circleUrl: require("../../assets/block.png"),//头像图片
+        }
+    },
 }
 </script>
 
 <style scoped>
 .main1 {
-    width: 100%;
-    height: 800px;
-    /* background-color: red; */
+  width: 100%;
+  height: 900px;
+  /* background-color: red; */
 
 }
 
-.text {
-    font-size: 14px;
+.bg {
+  width: 100%;
+  height: 100%;
+  margin-left: 50px;
+  background: url('../../assets/bg.gif');
+  /* background-size: cover; */
 }
-
-.item {
-    padding: 18px 0;
-}
-
-.box-card {
-    margin-left: 400px;
-    margin-top: 100px;
-    width: 930px;
-    height: 600px;
-
-}
-.box-card img{
-    width: 80px;
+.button {
+    margin-top: 20px;
+    margin-right: 150px;
+    background: linear-gradient(to bottom, #8da1f8, #fab2f1);
 }
 </style>
